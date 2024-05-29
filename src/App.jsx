@@ -26,7 +26,7 @@ function App() {
   }
   return (
     <div className="App">
-      <ToastContainer />
+      <ToastContainer/>
       <Router>
         <Routes>
           <Route path='/' element={<Login/>} />

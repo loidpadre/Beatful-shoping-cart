@@ -6,7 +6,12 @@ export const Wrapper = styled.nav`
     align-items: center;
     padding: 10px 20px;
     justify-content: center;
-
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    background-color: white;
+    margin: auto;
     gap: 50px;
     .logo{
         
@@ -113,6 +118,8 @@ export const Wrapper = styled.nav`
            }
             .Produtos{
                 display: flex;
+                gap: 60px;
+                flex-wrap: wrap;
                 width: 1200px;
                 margin:80px auto;
                 .card{

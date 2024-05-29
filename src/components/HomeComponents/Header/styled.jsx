@@ -3,8 +3,9 @@ import styled from "styled-components";
 export const Wrapper = styled.header`
     width: 80%;
     display: flex;
-    margin: 100px auto;
+    margin: 160px auto;
     justify-content: center;
+    border-bottom: 1px #f5f5f5 solid;
     gap:50px;
     padding: 40px;
     .text{
