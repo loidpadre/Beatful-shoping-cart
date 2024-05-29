@@ -3,12 +3,20 @@ import { Wrapper } from "./styled";
 import {AiOutlineShoppingCart, AiOutlineClose} from "react-icons/ai"
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-export default function NavBar(){
+export default function NavBar({productInCartList, setProductInCartList }){
     const [isOpen, setIsOpen] = useState(false)
     const handleClick = () =>{
         setIsOpen(!isOpen)
     }
+    const handleRemove = (id) =>{
+        const newListProd = productInCartList.filter((produt) => produt.id !== id)
+        setProductInCartList(newListProd)
+        toast.success("Produto removido")
+    }
+
     useEffect(() =>{
         AOS.init()
     },[])
@@ -38,26 +46,31 @@ export default function NavBar(){
                 </div>
                     <div className="Banner" >
                         <h1>Carrinho de compras</h1>
-                        <span>Ainda não tem produtos</span>
+                        <span>Os seus produtos</span>
                     </div>
                     <div className="Produtos">
-                        <div className="card">
-                            <img src="https://i.pinimg.com/564x/5e/02/82/5e0282567150e74fa85a25a0f721fec3.jpg" alt="" />
+                        {
+                            productInCartList.map((prod) =>(
+                                <div className="card">
+                            <img src={prod.iamge} alt="" />
                             <div className="text">
-                                <h1>Anel</h1>
+                                <h1>{prod.name}</h1>
                                 <div>
-                                    <p>R$ 9.450</p>
-                                    <span>Eletronicos</span>
+                                    <p>{prod.price}</p>
+                                    <span>{prod.category}</span>
                                 </div>
                                 <div className="btns">
                                 <button>-</button>
                                     <p>1</p>
                                 <button>+</button>
+                                <button className="remover" onClick={() => handleRemove(prod.id)}>Remover</button>
                             </div>
                             </div>
                         </div>
+                            ))
+                        }
                     </div>
-                    <div>
+                    <div className="comprar">
                         <button>Fazer compra</button>
                     </div>
                 </div>

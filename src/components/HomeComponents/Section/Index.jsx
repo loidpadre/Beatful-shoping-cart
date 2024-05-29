@@ -1,7 +1,7 @@
 import { Wrapper } from "./styled";
 import AOS from "aos"
 import "aos/dist/aos.css"
-export default function Section({product, setProduct}){
+export default function Section({product, setProduct, handleAddCart }){
     
     return(
         <Wrapper>
@@ -18,7 +18,7 @@ export default function Section({product, setProduct}){
                             </div>
         
                           </div>
-                          <button>Adicionar ao carrinho</button>
+                          <button onClick={()=>handleAddCart(prod.id)}>Adicionar ao carrinho</button>
                        </div>
                     ))
                 }

@@ -11,7 +11,7 @@ export const Wrapper = styled.section`
         gap: 40px;
         justify-content: center;
         .card{
-            width: 250px;
+            width: 230px;
             border-radius: 8px;
             .text{
                 display: flex;
@@ -30,7 +30,7 @@ export const Wrapper = styled.section`
                 
             }
             img{
-                width: 250px;
+                width: 230px;
                 border-radius: 8px;
                 height: 300px;
                 object-fit: cover;
@@ -43,6 +43,16 @@ export const Wrapper = styled.section`
                 font-size: 17px;
                 border: none;
                 border-radius: 8px;
+                cursor: pointer;
+                transition: 0.5s ease;
+                &:hover{
+                    background-color: transparent;
+                    border: 1px solid deeppink;
+                    color:black;
+                }
+            }
+            &:hover{
+                transform: scale(1.1);
                 cursor: pointer;
             }
         }

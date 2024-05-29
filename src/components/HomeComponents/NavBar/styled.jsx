@@ -57,13 +57,30 @@ export const Wrapper = styled.nav`
             left: 0;
             z-index: 1;
             background-color: rgba(63, 58, 58, 0.877);
+            .comprar{
+                width: 134px;
+                margin: 0 auto;
+                position: relative;
+                z-index: 1000px;
+                border-radius: 8px;
+                transition: 0.5s ease;
+                border: 1px solid transparent;
+                &:hover{
+                    transform: scale(1.1);
+                    background-color: white;
+                    border: 1px solid deeppink;
+                }
+                
+            }
             .Cart-products{
             background-color: white;
-           
+           position: absolute;
             width: 100%;
-            
+            top: 0;
+            transition: 0.5s es;
             text-align: center;
             padding: 20px;
+            
             .close{
                 background-color: deeppink;
                 color: white;
@@ -95,16 +112,29 @@ export const Wrapper = styled.nav`
                 }
            }
             .Produtos{
+                display: flex;
+                width: 1200px;
+                margin:80px auto;
                 .card{
-                    width: 200px;
+                    width: 250px;
                     display: flex;
                     flex-direction: column;
                     align-items: center;
                     gap: 10px;
+                    
                     .text{
                         display: flex;
                         flex-direction: column;
                         gap: 5px;
+                        .remover{
+                            background-color: red;
+                            transition: 0.5s ease;
+                            &:hover{
+                                cursor: pointer;
+                                transform: scale(0.9);
+                                opacity: 0.6;
+                            }
+                        }
                     }
                     .btns{
                         display: flex;
@@ -123,6 +153,7 @@ export const Wrapper = styled.nav`
                     }
                     img{
                         width:150px;
+                        height: 150px;
                         object-fit: cover;
                     }
                 }
