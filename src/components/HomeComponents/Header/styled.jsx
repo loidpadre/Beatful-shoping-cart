@@ -25,6 +25,7 @@ export const Wrapper = styled.header`
         }
         p{
             width: 500px;
+            font-weight: 300;
         }
         button{
             border: none;
@@ -78,7 +79,7 @@ export const Wrapper = styled.header`
         }
         .base{
             width: 400px;
-            height: 400px;
+            height: 450px;
             backdrop-filter: blue(10px);
             background-color: orange;
             box-shadow: 6px 6px 20px black;
@@ -91,6 +92,16 @@ export const Wrapper = styled.header`
             border-bottom-right-radius: 20px;
             border-bottom-left-radius: 200px;
             border-top-left-radius:200px;
+            animation: AnimeBase 2s infinite alternate cubic-bezier(0.25, 0.46, 0.45, 0.94) ;
+        }
+
+        @keyframes AnimeBase{
+            from{
+                top: -50px;
+            }
+             to{
+                top: 30px;
+            }
         }
     }
    

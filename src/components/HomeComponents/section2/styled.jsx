@@ -37,7 +37,7 @@ export const Wrapper = styled.section`
                 border-radius: 8px;
                 cursor: pointer;
                 margin-top: 40px;
-                transition: 0.5s ease;
+                transition: 0.1s ease-in;
                 &:hover{
                     background-color:deeppink ;
                     color: white;
@@ -58,6 +58,7 @@ export const Wrapper = styled.section`
         }
         h2{
             width: 700px;
+            font-weight: 300;
             margin: 20px auto;
         }
     }

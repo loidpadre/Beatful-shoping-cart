@@ -1,3 +1,7 @@
 .toast{
     z-index: 10000px;
 }
+a{
+    color: black;
+    font-weight: 500;
+}

@@ -163,6 +163,10 @@ export const Wrapper = styled.nav`
                         display: flex;
                         flex-direction: column;
                         gap: 5px;
+
+                        h1{
+                            font-weight: 400;
+                        }
                         .remover{
                             background-color: red;
                             transition: 0.5s ease;

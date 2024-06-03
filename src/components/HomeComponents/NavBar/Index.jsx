@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Wrapper } from "./styled";
 import {AiOutlineShoppingCart, AiOutlineClose} from "react-icons/ai"
+import { Link } from "react-router-dom";
 import IMG from "../../../assets/compras.gif"
 import AOS from 'aos'
 import 'aos/dist/aos.css'
@@ -43,6 +44,8 @@ export default function NavBar({productInCartList, setProductInCartList }){
                 <li>Portal do vendedor</li>
                 <li>Contact</li>
                 <li>Ajuda</li>
+                <Link to="/"><li>Login</li></Link>
+                <Link to="/"><li>Log out</li></Link>
             </ul>
             <div className="carrinho">
                 <div className="btn-cart" onClick={handleClick}>
@@ -58,7 +61,7 @@ export default function NavBar({productInCartList, setProductInCartList }){
                 </div>
                     <div className="Banner" >
                         <h1>Carrinho de compras</h1>
-                        <span>{productInCartList.length? "Os seus Produtos": "Sem produtos ainda"}</span>
+                        <span>{productInCartList.length? "OS SEUS PRODUTOS": "SEM PRODUTO AINDA."}</span>
                     </div>
                     <div className="totals">
                             <span><strong>Produtos: </strong>{productInCartList.length}</span>
@@ -77,7 +80,7 @@ export default function NavBar({productInCartList, setProductInCartList }){
                             <div className="text">
                                 <h1>{prod.name}</h1>
                                 <div>
-                                    <p>{prod.price}</p>
+                                    <p>R$ {prod.price}</p>
                                     <span>{prod.category}</span>
                                 </div>
                                 <div className="btns">

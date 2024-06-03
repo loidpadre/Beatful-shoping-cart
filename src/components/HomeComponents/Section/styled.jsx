@@ -22,6 +22,7 @@ export const Wrapper = styled.section`
             h1{
                 font-size: 16px;
                 font-style: normal;
+                font-weight: 300;
                 
             }
             span{
@@ -33,9 +34,11 @@ export const Wrapper = styled.section`
                 border-radius: 8px;
                 height: 300px;
                 object-fit: cover;
+                
             }
             button{
                 width: 100%;
+                
                 padding:10px 14px;
                 background-color: deeppink;
                 color: white;
