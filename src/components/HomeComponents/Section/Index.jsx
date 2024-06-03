@@ -13,7 +13,7 @@ export default function Section({product, setProduct, handleAddCart }){
                           <div className="text">
                             <h1>{prod.name}</h1>
                             <div>
-                                <p>{prod.price}</p>
+                                <p>R$ {prod.price}</p>
                                 <span>{prod.category}</span>
                             </div>
         

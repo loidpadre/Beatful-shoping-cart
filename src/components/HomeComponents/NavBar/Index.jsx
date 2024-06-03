@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Wrapper } from "./styled";
 import {AiOutlineShoppingCart, AiOutlineClose} from "react-icons/ai"
+import IMG from "../../../assets/compras.gif"
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 import { toast } from "react-toastify";
@@ -16,7 +17,17 @@ export default function NavBar({productInCartList, setProductInCartList }){
         setProductInCartList(newListProd)
         toast.success("Produto removido")
     }
+    // const totalPrice = () =>{
+    //     productInCartList.map((prodPrice) =>{
+    //         setTotalPrice(prev => [...prev, prodPrice.price] )
+            
+    //     })
+    // }
 
+    // useEffect(()=>{
+    //     totalPrice()
+    // },[])
+  
     useEffect(() =>{
         AOS.init()
     },[])
@@ -35,7 +46,8 @@ export default function NavBar({productInCartList, setProductInCartList }){
             </ul>
             <div className="carrinho">
                 <div className="btn-cart" onClick={handleClick}>
-                    <AiOutlineShoppingCart size={30}/>
+                <img src={IMG} alt="" />
+                    <div className="qtd">{productInCartList.length}</div>
                 </div>
 
                 <div className={`container ${isOpen? "": "hidden"}`}>
@@ -46,9 +58,18 @@ export default function NavBar({productInCartList, setProductInCartList }){
                 </div>
                     <div className="Banner" >
                         <h1>Carrinho de compras</h1>
-                        <span>Os seus produtos</span>
+                        <span>{productInCartList.length? "Os seus Produtos": "Sem produtos ainda"}</span>
+                    </div>
+                    <div className="totals">
+                            <span><strong>Produtos: </strong>{productInCartList.length}</span>
+                            <span><strong>Total: </strong>R$ {
+                                productInCartList.reduce((acomulador, total) =>
+                                    acomulador + total.price, 0
+                                ).toFixed(2)
+                            }</span>
                     </div>
                     <div className="Produtos">
+                        
                         {
                             productInCartList.map((prod) =>(
                                 <div className="card">

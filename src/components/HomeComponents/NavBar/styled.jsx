@@ -53,11 +53,34 @@ export const Wrapper = styled.nav`
         }
     }
     .carrinho{
+        .btn-cart{
+            position:relative;
+            .qtd{
+            background-color: red;
+            text-align: center;
+            color: white;
+            height: 20px;
+            width:20px;
+            border-radius: 50%;
+            font-size: 13px;
+            display: grid;
+            place-items: center;
+            position: absolute;
+            top: -7px;
+            left: 20px;
+            
+        }
+        img{
+                width: 30px;
+            }
+        }
+        
         cursor: pointer;
         .container{
             width: 100%;
             height: 100vh;
             position: fixed;
+            overflow-y: auto;
             top: 0;
             left: 0;
             z-index: 1;
@@ -85,7 +108,14 @@ export const Wrapper = styled.nav`
             transition: 0.5s es;
             text-align: center;
             padding: 20px;
-            
+            .totals{
+                text-align: left;
+                margin-left: 400px;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                justify-content: center;
+            }
             .close{
                 background-color: deeppink;
                 color: white;

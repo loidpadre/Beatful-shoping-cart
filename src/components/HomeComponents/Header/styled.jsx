@@ -9,10 +9,13 @@ export const Wrapper = styled.header`
     gap:50px;
     padding: 40px;
     .text{
-
+        .abv{
+            color: orange;
+            text-decoration: line-through;
+        }
         width: 60%;
         h1{
-            font-size: 87px;
+            font-size: 120px;
             text-transform: uppercase;
             color:deeppink;
         }
@@ -69,8 +72,25 @@ export const Wrapper = styled.header`
         }
     }
     .img{
+        position: relative;
         img{
+            width: 500px;
+        }
+        .base{
             width: 400px;
+            height: 400px;
+            backdrop-filter: blue(10px);
+            background-color: orange;
+            box-shadow: 6px 6px 20px black;
+            position: absolute;
+            top: -30px;
+            right: 40px;
+            z-index: -1;
+            border-top-right-radius: 80px;
+            transform: rotateX(90px);
+            border-bottom-right-radius: 20px;
+            border-bottom-left-radius: 200px;
+            border-top-left-radius:200px;
         }
     }
    

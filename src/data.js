@@ -62,4 +62,25 @@ export const data = [
         iamge: "https://i.pinimg.com/564x/e3/6b/86/e36b865877be8c866acc6cd24767630d.jpg",
         category: "Eletronicos"
     },
+    {
+        id: 9,
+        name: "Auscultador ",
+        price: 23.40,
+        iamge: "https://i.pinimg.com/564x/e1/f1/f8/e1f1f86eedb80358d16688da6960b151.jpg",
+        category: "Eletronicos"
+    },
+    {
+        id: 10,
+        name: "Caixa de som",
+        price: 55.76,
+        iamge: "https://i.pinimg.com/564x/b7/ec/66/b7ec66e12cedae97c64aaf35a42e038f.jpg",
+        category: "Eletronicos"
+    },
+    {
+        id: 11,
+        name: "Base ",
+        price: 66.99,
+        iamge: "https://i.pinimg.com/564x/76/81/62/7681622846433e301e3750046025163f.jpg",
+        category: "Eletronicos"
+    },
 ]
