@@ -96,7 +96,7 @@ export const Wrapper = styled.nav`
                 &:hover{
                     transform: scale(1.1);
                     background-color: white;
-                    border: 1px solid deeppink;
+                    
                 }
                 
             }
@@ -168,7 +168,7 @@ export const Wrapper = styled.nav`
                             font-weight: 400;
                         }
                         .remover{
-                            background-color: red;
+                            background-color: #940000;
                             transition: 0.5s ease;
                             &:hover{
                                 cursor: pointer;

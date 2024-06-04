@@ -18,7 +18,7 @@ export const Wrapper = styled.section`
                 border-top-right-radius: 20px;
             }
             img{
-                width: 750px;
+                width: 700px;
             }
             em{
                 font-weight: 300;

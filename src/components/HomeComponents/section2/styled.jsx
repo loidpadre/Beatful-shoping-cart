@@ -49,7 +49,7 @@ export const Wrapper = styled.section`
     .section2{
         background-color: white;
         color: black;
-        width: 100%;
+        max-width: 100%;
         padding: 80px;
         text-align: center;
         margin-top: 90px;

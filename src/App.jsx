@@ -18,10 +18,14 @@ function App() {
         const isProductInCart = productInCartList.find((product) => product.id === id)
 
         if(!isProductInCart){
-          setProductInCartList(prev => [...prev, productsCart])
+          setProductInCartList(prev => [...prev, {...productsCart, quanty: 1, total: productsCart.price}])
           toast.success('Produto adicionado ao carrinho com sucesso!');
         }else{
-          console.log(" O produto já existe no carrinho")
+          setProductInCartList(prev => 
+            prev.map(product => 
+              product.id === id ? { ...product, quanty: product.quanty + 1, total: product.price + product.price } : product
+            )
+          )
         }
   }
   return (

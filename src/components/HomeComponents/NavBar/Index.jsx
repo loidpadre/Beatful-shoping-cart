@@ -28,10 +28,39 @@ export default function NavBar({productInCartList, setProductInCartList }){
     // useEffect(()=>{
     //     totalPrice()
     // },[])
+    console.log(productInCartList)
   
     useEffect(() =>{
         AOS.init()
     },[])
+
+
+    const handleIncrementar = (id) =>{
+        setProductInCartList(prev => prev.map(product =>
+            product.id === id ? {
+                ...product, 
+                quanty: product.quanty + 1, 
+                total: product.total + product.price
+            }: product
+        )) 
+    }
+    const handleDecrementar = (id) =>{
+        setProductInCartList(prev => prev.map(product => 
+           {
+            if (product.id === id) {
+                const newQuanty = Math.max(product.quanty - 1, 1); // Garante que a quantidade nunca seja menor que zero
+                const newTotal = Math.max(product.total - product.price, product.price); // Garante que o total nunca seja menor que zero
+                return {
+                    ...product,
+                    quanty: newQuanty,
+                    total: newTotal
+                };
+            } else {
+                return product;
+            }
+           }
+        ))
+    }
     return(
         <Wrapper>
             <div className="logo">
@@ -66,9 +95,7 @@ export default function NavBar({productInCartList, setProductInCartList }){
                     <div className="totals">
                             <span><strong>Produtos: </strong>{productInCartList.length}</span>
                             <span><strong>Total: </strong>R$ {
-                                productInCartList.reduce((acomulador, total) =>
-                                    acomulador + total.price, 0
-                                ).toFixed(2)
+                                productInCartList.reduce((a,b) => a + b.total, 0).toFixed(2)
                             }</span>
                     </div>
                     <div className="Produtos">
@@ -84,9 +111,9 @@ export default function NavBar({productInCartList, setProductInCartList }){
                                     <span>{prod.category}</span>
                                 </div>
                                 <div className="btns">
-                                <button>-</button>
-                                    <p>1</p>
-                                <button>+</button>
+                                <button onClick={() => handleDecrementar(prod.id)}>-</button>
+                                    <p>{prod.quanty}</p>
+                                <button onClick={() => handleIncrementar(prod.id)}>+</button>
                                 <button className="remover" onClick={() => handleRemove(prod.id)}>Remover</button>
                             </div>
                             </div>
@@ -95,7 +122,7 @@ export default function NavBar({productInCartList, setProductInCartList }){
                         }
                     </div>
                     <div className="comprar">
-                        <button>Fazer compra</button>
+                        <button>Pagar agora</button>
                     </div>
                 </div>
                 </div>

@@ -68,6 +68,14 @@ export const Wrapper = styled.section`
                         border-radius: 10px;
                         background-color: black;
                         color: white;
+                        border: 1px solid white;
+                        cursor: pointer;
+                        transition: 0.5s ease;
+                        &:hover{
+                            background-color: white;
+                            color: black;
+                            border: 1px solid black;
+                        }
                     }
 
                 }

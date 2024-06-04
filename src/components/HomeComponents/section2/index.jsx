@@ -16,7 +16,7 @@ export default function Section2(){
             <div className="container">
                 <div className="section1">
                 <div className="text">
-                    <h1 data-aos="fade-left" data-aos-duration="1000">50% <span>OFF</span></h1>
+                    <h1 data-aos="fade-up" data-aos-duration="1000">50% <span>OFF</span></h1>
                     <p data-aos="fade-up" data-aos-duration="1000">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Obcaecati accusantium cum incidunt soluta hic quaerat error officiis magni porro culpa? Soluta laborum quaerat nihil perferendis dolores distinctio nam perspiciatis sunt!</p>
                    
                     <button data-aos="fade-up" data-aos-duration="1000">Ver produtos</button>
